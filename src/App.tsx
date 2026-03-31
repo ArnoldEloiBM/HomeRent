@@ -57,7 +57,14 @@ export default function App() {
               <Route path="properties" element={<PropertiesPage />} />
               <Route path="rentals" element={<RentalsPage />} />
               <Route path="payments" element={<PaymentsPage />} />
-              <Route path="messages" element={<MessagesPage />} />
+              <Route
+                path="messages"
+                element={
+                  <ProtectedRoute roles={["tenant", "landlord"]}>
+                    <MessagesPage />
+                  </ProtectedRoute>
+                }
+              />
               <Route path="users" element={<ProtectedRoute roles={["admin"]}><UsersPage /></ProtectedRoute>} />
               <Route path="applications" element={<ProtectedRoute roles={["admin"]}><ApplicationsPage /></ProtectedRoute>} />
               <Route path="profile" element={<ProfilePage />} />

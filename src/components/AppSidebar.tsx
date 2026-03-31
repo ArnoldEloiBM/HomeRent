@@ -21,7 +21,6 @@ import {
   Users,
   ClipboardList,
   LogOut,
-  User,
 } from "lucide-react";
 import { cn, getInitials } from "@/lib/utils";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -46,7 +45,6 @@ const navItems = {
     { label: "Properties", icon: Building2, path: "/properties" },
     { label: "Applications", icon: ClipboardList, path: "/applications" },
     { label: "Users", icon: Users, path: "/users" },
-    { label: "Messages", icon: MessageSquare, path: "/messages" },
   ],
 };
 

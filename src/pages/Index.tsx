@@ -1,6 +1,7 @@
 import { FormEvent, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
+import { MapPin, Mail, Phone } from "lucide-react";
 import { propertiesApi } from "@/lib/api";
 import { formatMoney } from "@/lib/utils";
 
@@ -28,6 +29,7 @@ function bathroomLabel(n: number) {
 export default function Index() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [sentOpen, setSentOpen] = useState(false);
+  const heroImage = new URL("./Hero.jpg", import.meta.url).href;
 
   const { data: properties = [], isLoading, error } = useQuery<PropertyRow[]>({
     queryKey: ["home-featured-properties"],
@@ -94,7 +96,7 @@ export default function Index() {
         id="home"
         className="relative min-h-screen flex items-center justify-center"
         style={{
-          backgroundImage: "linear-gradient(to right, rgba(0,0,0,0.65), rgba(0,0,0,0.25)), url('/hero.jpg')",
+          backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.65), rgba(0,0,0,0.25)), url(${heroImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -191,15 +193,15 @@ export default function Index() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center">
             <div className="p-8 rounded-2xl bg-white hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">1. Search & Find</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Search & Find</h3>
               <p className="text-gray-600">Browse through our property listings across locations and pick what fits your needs.</p>
             </div>
             <div className="p-8 rounded-2xl bg-white hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">2. Book a Visit</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Book a Visit</h3>
               <p className="text-gray-600">Schedule an in-person visit or virtual tour in just a few clicks.</p>
             </div>
             <div className="p-8 rounded-2xl bg-white hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">3. Rent & Move In</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Rent & Move In</h3>
               <p className="text-gray-600">Complete paperwork online and move into your next home securely and quickly.</p>
             </div>
           </div>
@@ -224,10 +226,19 @@ export default function Index() {
             </div>
             <div className="md:w-1/3 bg-gray-50 p-10 lg:p-14 flex flex-col justify-center border-l border-gray-100">
               <h3 className="text-xl font-bold text-gray-900 mb-8">Contact Information</h3>
-              <div className="space-y-4 text-gray-600">
-                <p>Norrsken House, Kigali</p>
-                <p><a href="mailto:eloibuyange@gmail.com" className="hover:text-primary">eloibuyange@gmail.com</a></p>
-                <p><a href="tel:0790703759" className="hover:text-primary">0790703759</a></p>
+              <div className="space-y-5 text-gray-600">
+                <div className="flex items-start gap-3">
+                  <MapPin className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                  <p>Norrsken House, Kigali</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Mail className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                  <a href="mailto:eloibuyange@gmail.com" className="hover:text-primary">eloibuyange@gmail.com</a>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Phone className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                  <a href="tel:0790703759" className="hover:text-primary">0790703759</a>
+                </div>
               </div>
             </div>
           </div>

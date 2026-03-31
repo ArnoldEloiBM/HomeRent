@@ -74,7 +74,7 @@ const Sidebar = React.forwardRef<HTMLDivElement, React.ComponentProps<"div"> & {
           <div
             ref={ref}
             className={cn(
-              "fixed inset-y-0 z-50 flex w-[var(--sidebar-width)] flex-col bg-sidebar transition-transform duration-200",
+              "fixed inset-y-0 z-50 flex w-[var(--sidebar-width)] flex-col bg-sidebar text-sidebar-foreground transition-transform duration-200",
               side === "left" ? "left-0" : "right-0",
               open ? "translate-x-0" : (side === "left" ? "-translate-x-full" : "translate-x-full"),
               className
@@ -95,7 +95,7 @@ const Sidebar = React.forwardRef<HTMLDivElement, React.ComponentProps<"div"> & {
           className
         )}>
           <div className={cn(
-            "fixed inset-y-0 z-10 flex h-svh w-[var(--sidebar-width)] flex-col bg-sidebar transition-[left,right,width] duration-200 ease-linear border-r border-sidebar-border",
+            "fixed inset-y-0 z-10 flex h-svh w-[var(--sidebar-width)] flex-col bg-sidebar text-sidebar-foreground transition-[left,right,width] duration-200 ease-linear border-r border-sidebar-border",
             "group-data-[state=collapsed]:w-[var(--sidebar-width-icon)]",
             side === "left" ? "left-0" : "right-0"
           )}>
@@ -168,7 +168,7 @@ const SidebarMenuButton = React.forwardRef<HTMLButtonElement, React.ComponentPro
       <Comp
         ref={ref}
         className={cn(
-          "flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm outline-none ring-sidebar-ring transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 [&>svg]:size-4 [&>svg]:shrink-0",
+          "flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm text-sidebar-foreground outline-none ring-sidebar-ring transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 [&>svg]:size-4 [&>svg]:shrink-0",
           className
         )}
         {...props}

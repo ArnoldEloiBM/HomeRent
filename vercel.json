@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/admin", "destination": "/frontend/admin/index.html" },
+    { "source": "/admin/:path*", "destination": "/frontend/admin/:path*" },
+
+    { "source": "/landlord", "destination": "/frontend/landlord/index.html" },
+    { "source": "/landlord/:path*", "destination": "/frontend/landlord/:path*" },
+
+    { "source": "/tenant", "destination": "/frontend/tenant/index.html" },
+    { "source": "/tenant/:path*", "destination": "/frontend/tenant/:path*" },
+
+    { "source": "/auth/login", "destination": "/frontend/auth/login.html" },
+    { "source": "/auth/register", "destination": "/frontend/auth/register.html" },
+    { "source": "/auth/forgot-password", "destination": "/frontend/auth/forgot-password.html" },
+    { "source": "/auth/reset-password", "destination": "/frontend/auth/reset-password.html" },
+    { "source": "/auth/verify-otp", "destination": "/frontend/auth/verify-otp.html" },
+    { "source": "/auth/change-password", "destination": "/frontend/auth/change-password.html" },
+    { "source": "/auth/apply", "destination": "/frontend/auth/apply.html" },
+    { "source": "/auth/:path*", "destination": "/frontend/auth/:path*" },
+
+    { "source": "/HomeRent", "destination": "/frontend/HomeRent/index.html" },
+    { "source": "/HomeRent/property", "destination": "/frontend/HomeRent/property.html" },
+    { "source": "/HomeRent/:path*", "destination": "/frontend/HomeRent/:path*" },
+
+    { "source": "/js/:path*", "destination": "/frontend/js/:path*" },
+    { "source": "/public/:path*", "destination": "/frontend/public/:path*" },
+
+    { "source": "/", "destination": "/frontend/index.html" }
+  ]
+}
+
